@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            background: linear-gradient(135deg, #000000, #000e22);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,9 +16,9 @@
             margin: 0;
         }
         .form-container {
-            background: white;
+            background: rgb(101, 178, 211);
             padding: 50px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 20px rgba(9, 3, 67, 0.15);
             border-radius: 12px;
             width: 400px;
             text-align: center;
@@ -46,8 +46,8 @@
             resize: vertical;
         }
         button {
-            background: #27ae60;
-            color: white;
+            background: #075fe1;
+            color: rgb(11, 11, 11);
             padding: 12px;
             border: none;
             border-radius: 8px;
@@ -57,7 +57,7 @@
             transition: background 0.3s;
         }
         button:hover {
-            background: #219150;
+            background: #5a71e2;
         }
     </style>
 </head>
@@ -96,9 +96,11 @@
         </form>
     </div>
     
+    
+
     <script>
         (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+            emailjs.init("-rD0dUsYowotMCGrd"); // Replace with your EmailJS public key
         })();
 
         document.getElementById("estateForm").addEventListener("submit", function(event) {
@@ -113,14 +115,13 @@
                 location: document.getElementById("location").value,
                 message: document.getElementById("message").value
             };
-            
-            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
+                           //service id     // template id 
+            emailjs.send("service_0j1k7f1", "template_wr9y9wo", formData)
                 .then(function(response) {
                     alert("Your inquiry has been sent successfully!");
                 }, function(error) {
                     alert("Failed to send inquiry. Try again later.");
                 });
-        });
-    </script>
+        }); </script>
 </body>
 </html>
